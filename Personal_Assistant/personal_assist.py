@@ -11,6 +11,8 @@ class PersonalAssistant:
         self.contacts = {}
         self.modified = False
 
+    
+
 
     def input_error(func):
         def inner(self, *args, **kwargs):
@@ -314,25 +316,32 @@ class PersonalAssistant:
         except ValueError:
             return False
     
+    def get_file_path(self, filename):
+        current_directory = os.path.dirname(__file__)
+        return os.path.join(current_directory, filename)
 
     def save_to_file(self, filename):
-        with open(filename, 'w') as file:
+        file_path = self.get_file_path(filename)
+        with open(file_path, 'w') as file:
             json.dump(self.contacts, file)
 
     def save_notes_to_file(self, filename):
-        with open(filename, 'w') as file:
+        file_path = self.get_file_path(filename)
+        with open(file_path, 'w') as file:
             json.dump(self.notes, file)
 
     def load_from_file(self, filename):
+        file_path = self.get_file_path(filename)
         try:
-            with open(filename, 'r') as file:
+            with open(file_path, 'r') as file:
                 self.contacts = json.load(file)
         except FileNotFoundError:
             print("No previous data found. Starting with an empty address book.")
         
     def load_notes_from_file(self, filename):
+        file_path = self.get_file_path(filename)
         try:
-            with open(filename, 'r') as file:
+            with open(file_path, 'r') as file:
                 self.notes = json.load(file)
         except FileNotFoundError:
             print("No previous notes found. Starting with an empty notes list.")
