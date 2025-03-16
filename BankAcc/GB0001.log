@@ -1,0 +1,10 @@
+2024-05-06 16:57:46,239 - Razvan's account, was created (Razvan, GB0001)
+2024-05-06 16:57:46,239 - Razvan, introduced the wrong PIN.
+2024-05-06 16:57:46,239 - Razvan, activated their card.
+2024-05-06 16:57:46,254 - Razvan, changed the PIN.
+2024-05-06 16:57:46,254 - Razvan, added £100. Sold: £100.
+2024-05-06 16:57:46,255 - Razvan, spent £90. Sold: £10.
+2024-05-06 16:57:46,255 - Razvan, attempted to spend £20 while sold is £10.
+2024-05-06 16:59:20,251 - Razvan, added £100. Sold: £110.
+2024-05-06 16:59:24,827 - Razvan, added £100. Sold: £210.
+2024-05-06 16:59:53,340 - Razvan, spent £90. Sold: £120.

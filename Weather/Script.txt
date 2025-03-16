@@ -1,0 +1,32 @@
+we are in the UK, working on a field with water based machines, we need to write a python code which will tel us if the temperature will drop below 3°C for every night Monday to Friday so that we know to empty the machines of water to prevent any small chances of freezing and damaging the machines
+
+
+-we will use OpenWeatherMap as our API
+
+-we need to check if the temperature overnight will drop below 3°C for every night Monday to Friday 
+
+-the location has to be choosen based on a postcode
+
+-to prevent high usage of memory or resources the code has to run it's checks from 12:00 to 15:00, Monday to Friday, Example:
+		Let's say today is Monday. Is 12:00, the code will do it's checks until 15:00 and at 15:00 if it notices that tonight, the temperature will be as low as 3°C, send out a warning. Same thing will be done tomorrow
+
+-after running it's checks, at 15:00 send out a warning if the lowest temp for that night will be 3°C
+
+-check for the lowest temperature 
+
+-the only information needed form the request is the temperature 
+
+
+ 
+-this is our starting point:
+
+import requests
+import schedule
+import time
+
+def check_weather():
+    api_key = "XXXXXXXXX"
+    post_code = input('Enter postcode: ')
+
+    url = requests.get(f"http://api.openweathermap.org/data/2.5/forecast?zip={post_code}&appid={api_key}&units=metric")
+    data = url.json()
