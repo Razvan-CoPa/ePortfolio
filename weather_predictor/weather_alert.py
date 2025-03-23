@@ -5,20 +5,24 @@ import requests
 from twilio.rest import Client
 
 # Your Twilio account details
-account_sid = "/Users/Razvan/Desktop/IT/keys/twilio_account_sid"
-auth_token = "/Users/Razvan/Desktop/IT/keys/twilio_auth_token"
+account_sid = "C:/Users/Razvan/Desktop/IT/keys/twilio_account_sid"
 TWILIO_ACCOUNT_SID = open(account_sid, 'r').read().strip()
+
+auth_token = "C:/Users/Razvan/Desktop/IT/keys/twilio_auth_token"
 TWILIO_AUTH_TOKEN = open(auth_token, 'r').read().strip()
-twilio_phone_number = "/Users/Razvan/Desktop/IT/keys/twilio_whatsapp_number"
-FROM_PHONE = open(twilio_phone_number, 'r').read()
-TO_PHONE = "+447367224922"           # Recepient's Phone Number
+
+twilio_number = "C:/Users/Razvan/Desktop/IT/keys/twilio_phone_number"
+FROM_PHONE = open(twilio_number, 'r').read().strip()
+TO_PHONE = "+447367224922"         # Recepient's Phone Number
+       
+api_key = "C:/Users/Razvan/Desktop/IT/keys/openweathermap_api_key"
+API_KEY = open(api_key, 'r').read().strip()
 
 # Define the city and API URLs
 CITY = "Milton Keynes"
 BASE_URL = "https://api.openweathermap.org/data/3.0/onecall?"
-api_key = "/Users/Razvan/Desktop/IT/keys/openweathermap_api_key"
-API_KEY = open(api_key, 'r').read().strip()
 forecast_url = "http://api.openweathermap.org/geo/1.0/direct?q="+ CITY + "&limit=1&appid=" + API_KEY
+
 
 forecast_response = requests.get(forecast_url).json()
 latitude = forecast_response[0]["lat"]
@@ -57,17 +61,17 @@ def check_temperature():
 
             # If it's the weekday, send a notification
             if weekday < 5 and eve_temp <= 3:  # 5 = Saturday, 6 = Sunday
-                send_whatsapp_message(f"❄️❗ Cold Temperature Alert! ⚠️\n The temperature this evening will be {eve_temp:.2f}°C in {CITY}.\nCheck the forcast for freezing temperatures!\n\n©️Razvan")
+                send_message(f"❄️❗ Cold Temperature Alert! ⚠️\n The temperature this evening will be {eve_temp:.2f}°C in {CITY}.\nCheck the forcast for freezing temperatures!\n\n©️Razvan")
             
 # Function to send Whatsapp via Twilio
-def send_whatsapp_message(message):
+def send_message(message):
     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
     message = client.messages.create(
         body = message,
-        from_ = f"whatsapp:{FROM_PHONE}",  # Your Twilio WhatsApp number with 'whatsapp:' prefix
-        to = f"whatsapp:{TO_PHONE}"     # The recipient's WhatsApp number with 'whatsapp:' prefix
+        from_ = FROM_PHONE,  # Your Twilio number with  prefix
+        to = TO_PHONE     # The recipient's number with prefix
     )
-    print(f"WhatsApp message sent: {message.body}")
+    print(f"SMS message sent: {message.body}")
 
 # Run the check
 check_temperature()
