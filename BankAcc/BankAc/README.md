@@ -18,10 +18,9 @@ Account File Storage: Account details are stored in a JSON file, and account act
 
 ### Requirements
 Python 3.x
-
 No external libraries required
 
-###How It Works
+How It Works
 Create a Bank Account: To create a bank account, you need to provide the account number, account holder's name, and date of birth.
 
 Account Activation: The account is initially inactive, and the PIN is set to the year of birth. To activate the account, the user must change the PIN.
