@@ -33,23 +33,44 @@ python personal_assistant.py
 Once you're inside the CLI, you can use the following commands:
 
 Command	Description
-add	Add a new contact
-delete	Delete an existing contact
-edit	Edit contact's phone or email
-birthday	Add or update a contact's birthday
-phone	Get the phone number of a contact
-email	Get the email of a contact
-show all	Display all saved contacts
-search	Search contacts by name
-note add	Add a note
-note show	Display all notes
-note delete	Delete a specific note
-address add	Add an address with a name
-address show	Show all saved addresses
-address delete	Delete a specific address
-birthdays	Show upcoming birthdays
-help	Show command list
-exit, quit	Exit the assistant
+
+add ___             - To add a new contact, (name and number)
+
+edit ___            - To edit an existing contact's number, (name + new number)
+
+edit-name ___       - To edit the name of an existing contact, (old name + new name)
+
+add-address ___     - To add an address for an existing contact, (contact name  + house number, street, city, country)
+
+edit-address ___    - To edit the address of a contact, (contact name + new address)
+
+show ___            - To display a specific contact,
+
+contacts            - To display all contacts,
+
+add-email ___       - To add an email address to an existing contact, (this command can also change the current email),
+
+add-birthday ___    - To add birthday to an existing contact, (DD/MM/YYYY)
+
+delete ___          - To delete a contact,
+
+clear_all           - To delete all contacts,
+
+show-birthday ___   - To display the birthday of a contact,
+
+birthdays           - To display the birthdays of contacts occurring in the next week,
+
+add-note ___        - To start writing your note, (note ID + your text)
+
+edit-note ___       - To edit an existing note, (note ID + new text)
+
+notes               - To display all notes,
+
+delete-note ___     - To delete an existing note, (note ID),
+
+search-note___      - To find a specific note by a keyword, (keyword)
+
+And "exit" or "close"
 
 ### Future Improvements
 📅 Calendar or event reminders
