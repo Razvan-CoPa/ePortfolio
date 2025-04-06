@@ -393,7 +393,7 @@ def main():
             print('"add-birthday ___"    - To add birthday to an existing contact, (DD/MM/YYYY)\n"delete ___"          - To delete a contact,\n"clear_all"           - To delete all contacts,')
             print('"show-birthday ___"   - To display the birthday of a contact,\n"birthdays"           - To display the birthdays of contacts occurring in the next week,')
             print('"add-note ___"        - To start writing your note, (note ID + your text)\n"edit-note ___"       - To edit an existing note, (note ID + new text)\n"notes"               - To display all notes,')
-            print('"delete-note ___"     - To delete an existing note, (note ID),\n"search-note___"      - To find a specific note by a keyword, (keyword)\n"notes"               - To see all notes,')
+            print('"delete-note ___"     - To delete an existing note, (note ID),\n"search-note___"      - To find a specific note by a keyword, (keyword)')
             print('And "exit" or "close"')
 
         elif command == "add-note":                                 
