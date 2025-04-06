@@ -50,15 +50,7 @@ address delete	Delete a specific address
 birthdays	Show upcoming birthdays
 help	Show command list
 exit, quit	Exit the assistant
-### File Structure
-bash
-Copy
-Edit
-personal-assistant/
-│
-├── personal_assistant.py      # Main application script
-├── data.pkl                   # Auto-generated file to persist data
-└── README.md                  # Project documentation
+
 ### Future Improvements
 📅 Calendar or event reminders
 
