@@ -84,5 +84,4 @@ And "exit" or "close"
 🗣️ Voice input and speech feedback
 
 ### Author
-Developed with ❤️ by Razvan Paraschiva
-Inspired by the idea of a smart yet minimal digital assistant.
+Developed with ❤️ by Razvan Paraschiva, inspired by the idea of a smart yet minimal digital assistant.

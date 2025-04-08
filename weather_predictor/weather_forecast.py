@@ -1,8 +1,7 @@
 # For this weather predictor we are using the OpenWheatherMap API
-
 import datetime as dt
 import requests
-from twilio.rest import Client
+from zoneinfo import ZoneInfo
 
 
 # Define the city and API URLs
@@ -43,9 +42,11 @@ humidity = response['main']['humidity']
 clouds = response['clouds']['all']
 
 description = response['weather'][0]['description']
-date_time = dt.datetime.fromtimestamp(response['dt'] + response['timezone'])
-sunrise_time = dt.datetime.fromtimestamp(response['sys']['sunrise'] + response['timezone']).time() 
-sunset_time = dt.datetime.fromtimestamp(response['sys']['sunset'] + response['timezone']).time()
+local_zone = ZoneInfo("Europe/London")
+date_time = dt.datetime.fromtimestamp(response['dt'], tz=dt.timezone.utc).astimezone(local_zone)
+date_time = date_time.strftime('%Y-%m-%d %H:%M:%S')
+sunrise_time = dt.datetime.fromtimestamp(response['sys']['sunrise'], tz=dt.timezone.utc).astimezone(local_zone).time()
+sunset_time = dt.datetime.fromtimestamp(response['sys']['sunset'], tz=dt.timezone.utc).astimezone(local_zone).time()
 
 print(f"{CITY} local date/time: {date_time}")
 print(f"Temperature in {CITY}: {temp_celsius:.2f}°С, but it feels like: {feels_like_celsius:.2f}°С")
@@ -77,3 +78,9 @@ for i, day in enumerate(forc_response["daily"][:7]):  # Get up to 7 days
     print(f"  ☁️ Weather: {description.capitalize()}")
     print(f"  🌅 Sunrise: {sunrise_time} | 🌇 Sunset: {sunset_time}\n")
     print("-" * 40)
+
+
+for i, day in enumerate(forc_response["daily"][:7]):
+    date = dt.datetime.fromtimestamp(day["dt"], tz=dt.timezone.utc).astimezone(local_zone).strftime('%A, %d %B %Y')
+    sunrise_time = dt.datetime.fromtimestamp(day["sunrise"], tz=dt.timezone.utc).astimezone(local_zone).time()
+    sunset_time = dt.datetime.fromtimestamp(day["sunset"], tz=dt.timezone.utc).astimezone(local_zone).time()
