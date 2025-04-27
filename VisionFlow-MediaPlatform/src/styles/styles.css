@@ -1,0 +1,310 @@
+/* ---- Base Styling for the Index Page ---- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+}
+
+/* ---- Header Styling ---- */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #ff0000;
+  color: #edf0f1;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ---- Title Styling ---- */
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ---- Navigation Menu ---- */
+nav {
+  margin-top: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+nav a {
+  font-size: 1.2rem;
+  color: #edf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #050505;
+}
+
+/* ---- Main Content ---- */
+main {
+  padding: 1rem;
+}
+
+#user-profile-container {
+  margin-top: 1rem;
+}
+
+/* ---- Input Fields and Buttons ---- */
+input[type="text"],
+input[type="file"],
+select {
+  display: inline-block;
+  width: 250px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #cc0000;
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="file"],
+  select {
+    width: 200px;
+  }
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+.dark-mode body {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode header {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.dark-mode button {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* -------------------------------------------------- ABOUT SECTION --------------------------------------------------- */
+
+/* ---- Base Styling for the About Page ---- */
+body.about-page {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Fundal de rezervă */
+  color: #fff;
+  text-align: center;
+}
+
+/* ---- Header for About ---- */
+header.about-header {
+  background-color: #ff0000;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav.about-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+nav.about-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav.about-nav a:hover,
+nav.about-nav a.active {
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+
+/* ---- Background Video ---- */
+.hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bkg_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+/* ---- Content Over Video ---- */
+main.about-content {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  margin-top: 200px;
+}
+
+/* ---- Spacer ---- */
+.spacer {
+  height: 50px;
+}
+
+/* ---- DAbout project ---- */
+.overlay-banner {
+  padding: 2rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 100px auto 0;
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+.overlay-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.overlay-banner p {
+  line-height: 1.6;
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* ---- Our team ---- */
+.team-section {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+}
+
+.team-section h2 {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Team Member Cards ---- */
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.team-member {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+  width: 90%;
+  transition: transform 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  color: black;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+/* ---- Member Images ---- */
+.team-member img {
+  width: 250px;
+  height: 350 px;
+  object-fit: cover;
+  border-radius: 2%;
+  margin-bottom: 1rem;
+  border: 3px solid #ff0000;
+}
+
+/* ---- Responsive Design ---- */
+@media (max-width: 768px) {
+  .team-member {
+    max-width: 90%;
+  }
+
+  .overlay-banner h2,
+  .team-section h2 {
+    font-size: 1.5rem;
+  }
+
+  nav.about-nav {
+    font-size: 0.9rem;
+  }
+}

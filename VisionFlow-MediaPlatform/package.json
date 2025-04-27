@@ -1,0 +1,24 @@
+{
+  "name": "visionflow",
+  "version": "1.0.0",
+  "description": "VisionFlow - Dashboard de Productivitate cu Integrare YouTube API",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "typescript",
+    "vite",
+    "youtube-api",
+    "dashboard",
+    "productivity"
+  ],
+  "author": "Razvan Paraschiva",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^6.3.2"
+  }
+}
